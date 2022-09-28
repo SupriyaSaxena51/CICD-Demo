@@ -41,8 +41,7 @@ jobs:
               . ~/.nvm/nvm.sh
 
           
-          nvm instal 14
-          npm install -g pm2
+
           cd ~/CICD-Demo
           git pull origin master
           npm install
