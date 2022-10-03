@@ -41,6 +41,6 @@ jobs:
         script: |             
               cd ~/CICD-Demo
               git pull origin master
-              /home/ubuntu/.nvm/versions/node/v14.20.1/bin/npm install
+              npm install
               pm2 restart ./bin/www
 
