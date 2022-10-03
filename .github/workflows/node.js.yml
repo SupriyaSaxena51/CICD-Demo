@@ -38,8 +38,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
-        script: |
-                
+        script: |             
               cd ~/CICD-Demo
               git pull origin master
               /home/ubuntu/.nvm/versions/node/v14.20.1/bin/npm install
