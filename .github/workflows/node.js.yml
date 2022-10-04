@@ -52,32 +52,32 @@ jobs:
 #     branches: [ master ]
 
 # jobs:
-  build:
+  # build:
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
+  #   strategy:
+  #     matrix:
+  #       node-version: [14.x]
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run test
-    - name: SSH Remote Commands
-      uses: appleboy/ssh-action@v0.1.2
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          pm2 delete all
-          cd ~/CICD-Demo
-          git pull
-          npm install
-          pm2 start npm -- start
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: Use Node.js ${{ matrix.node-version }}
+  #     uses: actions/setup-node@v1
+  #     with:
+  #       node-version: ${{ matrix.node-version }}
+  #   - run: npm ci
+  #   - run: npm run test
+  #   - name: SSH Remote Commands
+  #     uses: appleboy/ssh-action@v0.1.2
+  #     with:
+  #       host: ${{ secrets.HOST }}
+  #       username: ${{ secrets.USERNAME }}
+  #       key: ${{ secrets.KEY }}
+  #       port: ${{ secrets.PORT }}
+  #       script: |
+  #         pm2 delete all
+  #         cd ~/CICD-Demo
+  #         git pull
+  #         npm install
+  #         pm2 start npm -- start
