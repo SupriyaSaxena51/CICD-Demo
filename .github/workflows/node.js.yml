@@ -76,8 +76,8 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          sudo pm2 delete all
+          pm2 delete all
           cd ~/CICD-Demo
           git pull
-          sudo npm install
-          sudo pm2 start npm -- start
+          npm install
+          pm2 start npm -- start
