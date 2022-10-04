@@ -45,7 +45,18 @@
 #               npm install
 #               pm2 restart ./bin/www
 
-runs-on: ubuntu-latest
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
